@@ -22,15 +22,14 @@ def load_example_data():
     """Carga datos de ejemplo desde el repositorio (rutas relativas)"""
     try:
         # Ejemplo: Cargar desde URLs raw de GitHub (recomendado para despliegue)
-        url_test = "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/data/student_addiction_dataset_test.csv"
-        url_train = "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/data/student_addiction_dataset_train.csv"
+ 
         test = pd.read_csv(url_test)
         train = pd.read_csv(url_train)
         return test, train
     except:
         # Fallback local (para desarrollo)
-        test = pd.read_csv("data/ejemplo_test.csv")
-        train = pd.read_csv("data/ejemplo_train.csv")
+        test = pd.read_csv("student_addiction_dataset_train.csv")
+        train = pd.read_csv("student_addiction_dataset_test.csv")
         return test, train
 
 # Sidebar para controles (sin cambios, excepto mensaje añadido)
